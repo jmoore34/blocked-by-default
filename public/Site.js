@@ -7,10 +7,17 @@
 //Contains identifying and timer information
 export default class Site {
     domain: string; //e.g. google.com
-    unblockRemainingTime: number;
+
+    // Remaining durations until disruptions will occur reminding the user that the unblock time is running out.
+    // Ascending order, all positive
+    // When the final time is popped, the site moves on to the blocked or lockdown state.
+    timesUntilUnblockDisruptions: number[];
+
+    // Remaining time until lockdown is complete. Unaffected by whether the site is opened.
     lockdownRemainingTime: number;
 
-
+    // When the remaining ***time fields*** were last updated. Important for calculating the true time left
+    lastTimeUpdate: Date;
 
     /**
      * Get the entire list of Site objects from disk
