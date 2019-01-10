@@ -69,6 +69,9 @@ export default class Site {
 
     }
 
+    /**
+     * Calculates the current State based on internal timer data.
+     */
     calculateCurrentState() : State {
         // The time since last update
         const delta : number = new Date() - this.lastTimeUpdate;
