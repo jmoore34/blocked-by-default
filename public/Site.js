@@ -3,14 +3,15 @@ import { SITES } from './constants';
 
 /**
  * An enum that describes the state of the Site
+ * Using flow syntax described in https://github.com/facebook/flow/issues/627#issuecomment-437007323
  */
-const STATES = Object.freeze({
-    UNBLOCKED: 'unblocked', // unblock w/o interrupt window
-    UNBLOCKED_INTERRUPT: 'unblocked_interrupt', //unblocked, but the user is being interrupted by an intermediate timer
-    LOCKDOWN: 'lockdown',
-    BLOCKED: 'blocked' //the default state
-});
-type State = $Values<typeof STATES>;
+export opaque type State = 'BLOCKED' | 'UNBLOCKED' | 'UNBLOCKED_INTERRUPT' | 'LOCKDOWN';
+export const STATES = {
+    BLOCKED : ('BLOCKED' : State),
+    UNBLOCKED : ('UNBLOCKED' : State),
+    UNBLOCKED_INTERRUPT : ('UNBLOCKED_INTERRUPT' : State),
+    LOCKDOWN : ('LOCKDOWN' : State)
+};
 
 
 //Blocked site class
