@@ -1,19 +1,20 @@
-![alt text](https://raw.githubusercontent.com/FullStack-Academy-Kiev/react-chrome-extension/master/react-chrome-extension.png)
+# Blocked by Default
 
-This Chrome Extension was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
+## Objective
+Blocked by Default is a Chrome extension that serves to reduce time spent on distracting sites. When the user navigates to a blocked site, a blockpage is presented, and after a challenge is completed, the user can unblock the page for an explicit duration.
 
-1) ```npm i```
-2) ```yarn build```
-3) Go to ```chrome://extensions``` in Chrome
-4) Ensure that the Developer mode checkbox in the top right-hand corner is checked
-5) Click Load unpacked extension to pop up a file-selection dialog & select directory ```build``` in your repository.
-6) Ensure that the enabled box next to your chrome extension is checked so you can see it in action
+When the unblock duration set by the user passes, the page becomes blocked again. Optionally, the user may set a lockdown duration during which the page is unable to be unlocked again.
 
-Doc Instruction - 
-[chrome extension docx](https://github.com/FullStack-Academy-Kiev/react-chrome-extension/blob/master/chrome-extension-doc.docx)
+## Installation
 
-React App in Popup - ```master``` branch
+### Chrome Store Installation
 
-React App in Content Script - ```react-content-script``` branch (to see App go to ```https://www.google.com/```)
+To be implemented
 
-Vanila JS example for Popup in branch ```popup```, content setting in ```content-settings``` and context menu in branch ```contextmenu```
+### Manual installation
+
+In Chrome's extension options, click 'Load unpacked extension' and load the /build folder.
+
+## Changelog
+
+* v0.0.1: WIP
