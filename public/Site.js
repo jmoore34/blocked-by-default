@@ -92,6 +92,25 @@ export default class Site {
             return STATES.BLOCKED; //default state
     }
 
+    timeUntilNextEvent() : number {
+        // The time since last update
+        const delta : number = new Date() - this.lastTimeUpdate;
+
+        //First, look for relock & disruption times
+        if (this.timesUntilUnblockDisruptions)
+        {
+            //see if there are any **upcoming** (adjusted remaining time > 0) reblock/interrupt events.
+            const time : ?number = this.timesUntilUnblockDisruptions.find( time => time - delta > 0);
+            if (time) return time - delta;
+        }
+
+        //else look for lockdown end time
+        else if (this.lockdownRemainingTime - delta > 0)
+            return this.lockdownRemainingTime - delta;
+
+        //default (no upcoming event)
+        return 0;
+    }
 }
 
 
