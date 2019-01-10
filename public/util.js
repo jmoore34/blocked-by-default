@@ -1,5 +1,5 @@
 // @flow
-import type State from './Site';
+import type {State} from './Site';
 import {getSite} from "./Site";
 
 export function getDomain(url: string) : string {
